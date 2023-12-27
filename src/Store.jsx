@@ -11,6 +11,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => 
   getDefaultMiddleware().concat(productsApi.middleware),
+  devTools: false
 });
 
 store.dispatch(productsFetch());

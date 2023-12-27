@@ -14,27 +14,27 @@ const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        addToCart(state, action) {
-            if (localStorage.getItem("cartItems")) {
-                // if already items in cart
-                // get existing one and add it with new element
-                const items = JSON.parse(localStorage.getItem("cartItems"));
-                localStorage.setItem(
-                    "cartItems",
-                    JSON.stringify([...items, action.payload])
-                );
-                toast.info("Increased product quantity", {
-                    position: "bottom-left",
-                });
-            } else {
-                // if zero items in cart
-                // create new one with new element
-                localStorage.setItem(
-                    "cartItems",
-                    JSON.stringify([action.payload])
-                );
-            }
-        },
+       //addToCart(state, action) {
+       //    if (localStorage.getItem("cartItems")) {
+       //        // if already items in cart
+       //        // get existing one and add it with new element
+       //        const items = JSON.parse(localStorage.getItem("cartItems"));
+       //        localStorage.setItem(
+       //            "cartItems",
+       //            JSON.stringify([...items, action.payload])
+       //        );
+       //        toast.info("Increased product quantity", {
+       //            position: "bottom-left",
+       //        });
+       //    } else {
+       //        // if zero items in cart
+       //        // create new one with new element
+       //        localStorage.setItem(
+       //            "cartItems",
+       //            JSON.stringify([action.payload])
+       //        );
+       //    }
+       //},
         addToCart(state, action) {
             const existingIndex = state.cartItems.findIndex(
               (item) => item.id === action.payload.id
